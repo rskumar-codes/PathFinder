@@ -1,0 +1,153 @@
+/*
+This stylesheet document created for the following project,
+	@project name: Path Finder
+	@author: SenthilKumar Rajendran
+	@date: 23-mar-2017
+
+This stylesheet document includes the following,
+	1) LESS Global Variables
+	2) Reset Browser Default
+	3) Content Styles
+	4) Form Styles
+	5) For Extra Small Devices
+*/
+/*LESS Global Variables*/
+@h100: 100%;
+@w100: 100%;
+@bg-gray-color: #f8f8f8;
+@bg-white-color: #ffffff;
+
+/*Reset Browser Default*/
+.browserReset(){
+	width: @w100;
+	height: @h100;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	.browserReset;
+}
+
+.h100{
+	height: @h100;
+}
+
+.w100{
+	width: @w100;
+}
+
+/*Content Styles*/
+.app-logo{
+	width: 128px;
+	height: 128px;
+	display:inline-block;
+	background: transparent url(../images/logo-blue-128x128.png) no-repeat;
+}
+
+.section-left{
+	background: @bg-gray-color url(../images/inner-shadow-right.png) right repeat-y;
+	height: @h100;
+	position:relative;
+}
+
+.section-right{
+	background-color: @bg-white-color;
+}
+
+.content-container{
+	display:flex;
+	flex-direction:column;
+}
+
+.content-wrapper{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+}
+
+#mapPlaceholder {
+	height: @h100;
+	width: @w100;
+}
+
+.layout-landscape{
+	height:200px;
+}
+
+.footer-wrapper{
+	position:absolute !important;
+	bottom:0;
+	left:0;
+	z-index:10;
+	margin-bottom:10px;
+	
+	ul.footer-links{
+		margin:0;
+		padding:0;
+		list-style:none;
+		
+		li{
+			display:inline-block;
+			margin:0px 5px;
+			list-style:none;
+			padding:0;
+		}
+	}
+}
+
+.no-margin{
+	margin:0 !important;
+}
+
+.no-padding{
+	padding:0 !important;
+}
+
+/*Form Styles*/
+.controls {
+	margin-top: 10px;
+	border: 1px solid transparent;
+	border-radius: 2px 0 0 2px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 32px;
+	outline: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/*For Extra Small Devices*/
+@media all and (max-width: 768px) {
+	.device-extra-small{
+		display:flex;
+		flex-direction:column;
+	}
+	
+	.layout-portrait{
+		height: auto;
+		width: 100px;
+	}
+	
+	.content-container{
+		flex-direction:row;
+	}
+	
+	.section-left{
+        background: @bg-gray-color url(../images/inner-shadow-bottom.png) bottom repeat-x;
+		height: 150px;
+	}
+	
+	.section-right{
+		flex: 1;
+	}
+	
+	.app-logo{
+		width: 64px;
+		height: 64px;
+		display:inline-block;
+		background: transparent url(../images/logo-blue-64x64.png) no-repeat;
+		position: absolute;
+		top: 34px;
+	}
+}

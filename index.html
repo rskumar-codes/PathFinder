@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Path Finder</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, intial-scale=1" />
+<link rel="shortcut icon" type="image/png" href="images/favIcon.png"/>
+<link type="text/css" rel="stylesheet/less" href="css/layout.less" />
+<!-- Inject :: Library Stylesheet -- Starts Here -->
+<link type="text/css" rel="stylesheet" href="lib/styles/css/bootstrap.min.css" />
+<!-- Inject :: Library Stylesheet -- Starts Here -->
+<script type="text/javascript" src="js/app.js"></script>
+<style type="text/css"></style>
+<body>
+<div class="container-fluid h100">
+	<div class="row h100 device-extra-small">
+		<div class="col-sm-4 col-md-4 section-left" id="leftPane">
+			<div class="content-container col-sm-12 col-md-12 h100">
+				<div class="content-wrapper layout-landscape layout-portrait" style="">
+					<span class="app-logo" title="Path Finder">&nbsp;</span>
+				</div>
+				<div class="content-wrapper" style="">
+					<form class="w100">
+						<div class="form-group">
+							<label class="sr-only1" for="origin-input">Pickup Location:</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="origin-input" id="origin-input" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									</button>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="sr-only1" for="destination-input">Delivery Location:</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="destination-input" id="destination-input" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									</button>
+								</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="content-container col-sm-12 col-md-12 footer-wrapper hidden-xs" style="">	
+				<div class="content-wrapper" style="">
+					<p class="text-muted">&copy; 2017 PathFinder.com</p>
+				</div>
+				<div class="content-wrapper" style="">
+					<ul class="footer-links">
+						<li><a href="javascript:void(0);" class="text-primary">Who we are?</a><li>
+						<li><a href="javascript:void(0);" class="text-primary">Contact Us</a><li>
+						<li class="text-warning">&#64;author: Senthil<li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-8 col-md-8 section-right no-padding">
+			<div id="mapPlaceholder" style="min-height:100%;">&nbsp;</div>
+		</div>
+	</div>
+</div>
+
+<!-- Inject :: Google Map API -- Starts Here -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8QLo95af1iS3mC0fFQJfAXnAeilp3e1A&libraries=places&callback=initMap" async defer></script>
+<!-- Inject :: Google Map API -- Ends Here -->
+
+<!-- Inject :: Library Scripts -- Starts Here -->
+<script type="text/javascript" src="lib/scripts/jquery.min.1.12.4.js"></script>
+<script type="text/javascript" src="lib/scripts/less.2.7.2.js"></script>
+<script type="text/javascript" src="lib/scripts/bootstrap.min.js"></script>
+<!-- Inject :: Library Scripts -- Ends Here -->
+
+<!-- Inline jQuery -- Starts Here -->
+<script type="text/javascript">
+$(document).ready(function(){
+	var _mapPlaceholder = $("#mapPlaceholder");
+	$(_mapPlaceholder).css({"height":$(window).height()+"px"})
+});
+$(window).load(function(){
+	var _mapPlaceholder = $("#mapPlaceholder");
+	$(_mapPlaceholder).css({"width":$(_mapPlaceholder).parent().width()+"px"})
+});
+</script>
+<!-- Inline jQuery -- Starts Here -->
+</body>
+</head>
+</html>
